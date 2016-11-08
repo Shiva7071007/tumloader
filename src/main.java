@@ -31,22 +31,28 @@ public class main {
 
         System.out.println("Total no of posts found is " +postNo );
         int reqPost ;
+        int post = 0;
 
         do {
 
-            System.out.println("enter the no of post you want");
+            System.out.println("enter the position you want to start ( 0 for starting position )");
+            post = scanner.nextInt();
+            System.out.println("enter the position you want to end ( maximum is "+postNo+" )");
             reqPost = scanner.nextInt();
 
-        }while(postNo<=reqPost && reqPost==0);
+        }while(postNo<=reqPost && post < reqPost && reqPost==0);
 
-        int post = 0;
+        int num;
 
         String urls="";
 
         while( post < reqPost )
         {
-            reqPost = reqPost - post;
-            urls +=getPost( input , post , reqPost );
+            if(reqPost-post < 50)
+                num = reqPost - post;
+            else
+                num = 50;
+            urls +=getPost( input , post , num );
             post += 50;
         }
 
@@ -58,7 +64,7 @@ public class main {
         BufferedWriter bufferedWriter = null;
         try {
 
-            File myFile = new File("C:/downloads/downloadList.txt");
+            File myFile = new File("C:/downloads/"+input+"-downloadList.txt");
             // check if file exist, otherwise create the file before writing
             if (!myFile.exists()) {
                 myFile.createNewFile();
@@ -75,7 +81,7 @@ public class main {
             }
         }
 
-        System.out.println(" download links are saved in c:>downloads>downloadList.txt");
+        System.out.println(" download links are saved in c:>downloads>"+input+"-downloadList.txt");
 
     }
 
@@ -108,7 +114,7 @@ public class main {
     }
 
     public static String getPost ( String _url , int start , int num) throws ParseException {
-        System.out.println("Parsing 50 urls from "+ start+ " with url:");
+        System.out.println("Parsing "+num+" urls from "+ start+ " with url:");
         System.out.println( "http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start);
 
         String urlContent = urlReader("http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start );
@@ -137,3 +143,4 @@ public class main {
     }
 
 }
+
