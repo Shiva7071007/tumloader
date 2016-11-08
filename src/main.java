@@ -8,13 +8,14 @@ import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
 public class main {
 
     public static void main ( String[] args) throws ParseException {
 
         Scanner scanner = new Scanner (System.in);
 
-        System.out.println("Enter the Tumblr blog url");
+        System.out.println("Enter the Tumblr blog url ( without http://");
         System.out.println("like: example.tumblr.com " );
 
         String input = scanner.next();  //getting input from user
