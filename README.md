@@ -1,4 +1,4 @@
-# tumloader
+# tumloader_java
 A simple java program to create a download list for all images and gifs from a tumblr blog which can be downloaded using any downloader like idm (windows), uget (linux), ADM(android), etc.
 
 
