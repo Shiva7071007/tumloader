@@ -1,7 +1,5 @@
 # tumloader
-A simple java program to create a download list for all images and gifs from a tumblr blog which can be downloaded using any downloader like idm (windows) or uget (linux) , etc. 
-
-this program uses tumblr api v1 ( for details goto https://www.tumblr.com/docs/en/api/v1 )
+A simple java program to create a download list for all images and gifs from a tumblr blog which can be downloaded using any downloader like idm (windows), uget (linux), ADM(android), etc.
 
 
 -----------------------------method to use----------------------------------
@@ -14,4 +12,14 @@ this program uses tumblr api v1 ( for details goto https://www.tumblr.com/docs/e
 
 
 
-change the download path in file /src/main.java at line "File myFile = new File("C:/downloads/downloadList.txt");"
+------------------------------NOTES---------------------------------------------
+
+-->this program uses tumblr api v1 ( for details goto https://www.tumblr.com/docs/en/api/v1 )
+
+-->change the download path in file /src/main.java at line "File myFile = new File("C:/downloads/downloadList.txt");"
+
+-->search google for how to import downloads links from text file for the respected downloader.
+
+-->downloader is not included cause these downloaders can handle large downloads efficiently and provide better resume and queue compability
+
+
