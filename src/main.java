@@ -59,7 +59,7 @@ public class main {
 
         System.out.println("parsing completed");
 
-        //System.out.println("\n\n\n");
+        System.out.println("\n\n\n");
         //System.out.println(urls);
 
         BufferedWriter bufferedWriter = null;
