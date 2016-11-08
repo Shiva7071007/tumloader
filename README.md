@@ -4,7 +4,7 @@ A simple java program to create a download list for all images and gifs from a t
 
 -----------------------------method to use----------------------------------
 
-1> enter the blog address like example.tumblr.com (dont enter with http://)
+1> enter the blog address like example.tumblr.com (don't enter with http://)
 
 2> enter the starting position ( 0 for start from begginning )
 
