@@ -65,7 +65,7 @@ public class main {
         BufferedWriter bufferedWriter = null;
         try {
 
-            File myFile = new File("C:/downloads/"+input+"-downloadList.txt");
+            File myFile = new File("C:/downloads/"+input+"-downloadList.txt");// change to select different download address
             // check if file exist, otherwise create the file before writing
             if (!myFile.exists()) {
                 myFile.createNewFile();
