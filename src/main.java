@@ -23,6 +23,8 @@ public class main {
 
         String urlContent = urlReader("http://"+input+"/api/read/json?type=photo&num=0&start=0" );//getting the json object list as string
 
+        urlContent=urlContent.substring(22,urlContent.length()-1);
+
         //System.out.println( urlContent );
         JSONParser parser = new JSONParser();
         JSONObject obj = (JSONObject) parser.parse(urlContent);// converting string to json
@@ -110,7 +112,7 @@ public class main {
             e.printStackTrace();
         }
 
-        return(abc.substring(22,abc.length()-1));
+        return(abc);
 
     }
 
@@ -119,6 +121,7 @@ public class main {
         System.out.println( "http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start);
 
         String urlContent = urlReader("http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start );
+        urlContent=urlContent.substring(22,urlContent.length()-1);
 
         //System.out.println(urlContent);
 
