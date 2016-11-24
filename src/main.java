@@ -1,6 +1,7 @@
 /**
  * Created by shiva7071 on 07-11-2016.
  */
+import java.lang.reflect.Array;
 import java.util.Scanner;
 import java.io.*;
 import java.net.*;
@@ -127,16 +128,29 @@ public class main {
 
         JSONParser parser = new JSONParser();
         JSONObject objList = (JSONObject) parser.parse(urlContent);
-        JSONArray arr = (JSONArray) objList.get("posts");
-        // System.out.println( arr.size() );
+        JSONArray postsArr = (JSONArray) objList.get("posts");
+        // System.out.println( postsArr.size() );
 
         String result ="";
 
-        for (int i = 0; i < arr.size(); i++)
+        for (int i = 0; i < postsArr.size(); i++)
         {
+            //JSONArray FoodNameArray = new JSONArray(FoodArray.getJSONObject(i).getString("content"));
+            JSONArray photosArr = (JSONArray)((JSONObject)postsArr.get(i)).get("photos");
 
-            JSONObject jsonobject = (JSONObject) arr.get(i);
-            result +=(String)jsonobject.get("photo-url-1280")+ ("\n");
+            if(photosArr.size()>0)
+            {
+                for (int j = 0; j < photosArr.size(); j++)
+                {
+                    JSONObject jsonobject = (JSONObject) photosArr.get(j);
+                    result +=(String)jsonobject.get("photo-url-1280")+ ("\n");
+                }
+            }
+
+            else {
+                JSONObject jsonobject = (JSONObject) postsArr.get(i);
+                result += (String) jsonobject.get("photo-url-1280") + ("\n");
+            }
 
         }
 
@@ -145,6 +159,7 @@ public class main {
         return result;
 
     }
+
 
 }
 
