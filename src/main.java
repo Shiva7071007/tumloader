@@ -135,7 +135,7 @@ public class main {
 
         for (int i = 0; i < postsArr.size(); i++)
         {
-            //JSONArray FoodNameArray = new JSONArray(FoodArray.getJSONObject(i).getString("content"));
+            
             JSONArray photosArr = (JSONArray)((JSONObject)postsArr.get(i)).get("photos");
 
             if(photosArr.size()>0)
