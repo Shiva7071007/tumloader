@@ -16,13 +16,13 @@ public class main {
 
         Scanner scanner = new Scanner (System.in);
 
-        System.out.println("Enter the Tumblr blog url ( without http://)");
+        System.out.println("Enter the Tumblr blog url ( without https://)");
         System.out.println("like: example.tumblr.com " );
 
         String input = scanner.next();  //getting input from user
         //String input = ("good.tumblr.com");
 
-        String urlContent = urlReader("http://"+input+"/api/read/json?type=photo&num=0&start=0" );//getting the json object list as string
+        String urlContent = urlReader("https://"+input+"/api/read/json?type=photo&num=0&start=0" );//getting the json object list as string
 
         urlContent=urlContent.substring(22,urlContent.length()-1);
 
@@ -119,9 +119,9 @@ public class main {
 
     public static String getPost ( String _url , int start , int num) throws ParseException {
         System.out.println("Parsing "+num+" urls from "+ start+ " with url:");
-        System.out.println( "http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start);
+        System.out.println( "https://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start);
 
-        String urlContent = urlReader("http://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start );
+        String urlContent = urlReader("https://"+_url+"/api/read/json?type=photo&num="+num+"&start="+start );
         urlContent=urlContent.substring(22,urlContent.length()-1);
 
         //System.out.println(urlContent);
