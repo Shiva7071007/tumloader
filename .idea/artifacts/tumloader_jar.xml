@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="tumloader:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/tumloader_jar</output-path>
+    <root id="archive" name="tumloader.jar">
+      <element id="module-output" name="tumloader" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
